@@ -8,7 +8,7 @@ import SampleEmail from "../components/sample-email"
 
 function stringsToGoogleSearchQ(strings = []) {
   return strings
-    .map((str) => str.toLowerCase().replace(/\s/g, '+'))
+    .map((str) => str.replace(/\s/g, '+'))
     .join('+')
 }
 
