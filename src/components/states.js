@@ -45,7 +45,6 @@ export default {
   tx: 'Texas',
   ut: 'Utah',
   va: 'Virginia',
-  vi: 'Virgin Islands',
   vt: 'Vermont',
   wa: 'Washington',
   wi: 'Wisconsin',
