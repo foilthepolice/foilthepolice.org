@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "foil-the-police",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "foil-the-police",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "",
   "dependencies": {
+    "@nfront/global-styles": "^1.2.1",
     "gatsby": "^2.22.15",
     "gatsby-image": "^2.4.5",
     "gatsby-plugin-manifest": "^2.4.9",
