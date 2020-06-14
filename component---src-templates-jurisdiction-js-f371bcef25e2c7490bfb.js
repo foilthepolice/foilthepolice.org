@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{V8yu:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),l=a.n(n),r=(a("Wbzz"),a("pJH7")),p=(a("tBDR"),a("hIod")),c=a("WgTa");a("/Cf1");t.default=function(e){var t=e.pageContext;return l.a.createElement(r.a,null,l.a.createElement(p.a,{title:"Home"}),l.a.createElement("h1",{style:{textTransform:"uppercase"}},"FOIL ",t.title),l.a.createElement("p",null,t.example),l.a.createElement(c.a,{sample:""}))}}}]);
+//# sourceMappingURL=component---src-templates-jurisdiction-js-f371bcef25e2c7490bfb.js.map
