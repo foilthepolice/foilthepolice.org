@@ -4,6 +4,7 @@ module.exports = {
     description: `TODO(nsahler)`,
     author: `@gatsbyjs`,
   },
+  pathPrefix: "/foilthepolice.org",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
