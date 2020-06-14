@@ -6,7 +6,14 @@ import Scaffolding from "../components/scaffolding"
 import Head from "../components/head"
 import SampleEmail from "../components/sample-email"
 
+function stringsToGoogleSearchQ(strings = []) {
+  return strings
+    .map((str) => str.replace(/\s/g, '+'))
+    .join('+')
+}
+
 const IndexPage = () => {
+  const [hometownIn, setHometownIn] = useState('');
   const [stateIn, setStateIn] = useState(null);
   const [requestSent, setRequestSent] = useState(false);
   const transparencyLaw = TRANSPARENCY_LAWS.find(tl => tl.state === stateIn);
@@ -62,6 +69,11 @@ const IndexPage = () => {
             <div>
               <h2>3. Send to your local government clerk!</h2>
               <p>All that’s left is to find out where to e-mail your request to. Let’s search for your clerk’s e-mail:</p>
+              <input type="text" value={hometownIn} placeholder="Enter your town's name" onChange={ev => setHometownIn(ev.target.value)} />
+              <a href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, STATES[stateIn], transparencyLaw.abbr, 'submission email'])}`} target="_blank">
+                <button>Search for Clerk Email</button>
+              </a>
+              <br />
               <small>FYI: Your town may ask you to submit through a webpage or insert the text into PDF form. Depending on how many pages you request, the clerk may have a $1~10 fee.</small>
               <button onClick={() => setRequestSent(true)}>I've Submitted My Record Request</button>
             </div>
