@@ -341,7 +341,7 @@ export default [
     mrGuideUrl: 'https://www.muckrock.com/place/united-states-of-america/north-dakota/',
     rcGuideUrl: 'https://www.rcfp.org/open-government-guide/north-dakota/#open-records'
   },
-    {
+  {
     key: 'nj-open-public-records-act',
     name: 'New Jersey Open Public Records Act',
     statute: 'NJSA 47:1A-1 et seq.',
@@ -350,6 +350,16 @@ export default [
     responseWithinDays: 7,
     mrGuideUrl: 'https://www.muckrock.com/place/united-states-of-america/new-jersey/',
     rcGuideUrl: 'https://www.rcfp.org/open-government-guide/new-jersey/#open-records',
+  },
+  {
+    key: 'ny-freedom-of-information-law',
+    name: 'New York Freedom of Information Law',
+    statute: 'N.Y. Pub. Off. Law Ch. 47 Art. 6 § 84',
+    abbr: 'FOIL',
+    state: 'ny',
+    responseWithinDays: 5,
+    mrGuideUrl: 'https://www.muckrock.com/place/united-states-of-america/new-york/',
+    rcGuideUrl: 'https://www.rcfp.org/open-government-guide/new-york/#open-records',
   },
   {
     key: 'oh-freedom-of-information-act',
