@@ -15,18 +15,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            subsets: [`latin`],
-            variants: [`Bold`, `Regular`]
-          }
-        ],
-      },
-    }
+    `gatsby-plugin-sharp`
   ],
 }

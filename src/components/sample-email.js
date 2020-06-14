@@ -38,7 +38,8 @@ const Header = ({ siteTitle, toggleable }) => {
               border: '1px solid',
               borderColor: COLORS.dark,
               padding: '13px 20px',
-              minWidth: '100px'
+              minWidth: '100px',
+              cursor: 'pointer'
             }}
             onClick={() => setShowContent(!showContent)}>
             { showContent ? 'HIDE': 'SHOW' }
