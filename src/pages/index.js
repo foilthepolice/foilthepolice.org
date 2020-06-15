@@ -6,7 +6,8 @@ import { stringsToGoogleSearchQ } from '../utils';
 
 import Scaffolding from "../components/scaffolding"
 import Head from "../components/head"
-import SampleEmail from "../components/sample-email"
+import EmailTemplate from "../components/EmailTemplate"
+import EmailTemplateList from '../components/EmailTemplateList'
 
 const IndexPage = ({ location }) => {
   const params =  new URLSearchParams(location.search)
@@ -47,7 +48,7 @@ const IndexPage = ({ location }) => {
             <div>
               <h2>2. Copy (Ctrl+C) a Record Request to Send</h2>
               <p>In the templates below, we’ve included common phrases that journalists and lawyers use to get faster responses. You just need to copy, fill in your name, and send!</p>
-              <SampleEmail sample=""/>
+              <EmailTemplateList state={stateIn}/>
             </div>
             <div>
               <h2>3. Send to your local government clerk!</h2>
