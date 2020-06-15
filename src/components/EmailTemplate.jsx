@@ -54,7 +54,7 @@ const CopyRequestButton = ({ requestText }) => {
   return (
     <Button color="black" size="sm" inverted disabled={copied} onClick={() => {
       setCopied(true);
-      copy(requestText);
+      copy(requestText, { format: 'text/plain' });
     }}>
       {copied ? 'Copied!' : 'Copy Request to Clipboard'}
     </Button>
