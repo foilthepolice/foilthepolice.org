@@ -13,10 +13,9 @@ function stringsToGoogleSearchQ(strings = []) {
 }
 
 function getStateQueryParam(searchString) {
-  // '?state=nj&wer=qwewqe'.replace('?', '').split('&').map(p => p.split('='))
   const params = searchString.replace('?', '').split('&').map(p => p.split('='));
   for (let p of params) {
-    if (p && p[0] === 'state') return p[1];
+    if (p && p[0] === 'state' && Object.keys(STATES).includes(p[1])) return p[1];
   }
   return null;
 }
