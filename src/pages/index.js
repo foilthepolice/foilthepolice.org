@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState } from 'react';
 
-import STATES from '../components/states';
-import TRANSPARENCY_LAWS from '../components/transparencyLaws';
-import Scaffolding from "../components/scaffolding"
-import Head from "../components/head"
+import STATES from '../components/constants/states';
+import TRANSPARENCY_LAWS from '../components/laws/transparencyLaws';
+import Scaffolding from "../components/layout/scaffolding"
+import Head from "../components/layout/head"
 import SampleEmail from "../components/sample-email"
 
 function stringsToGoogleSearchQ(strings = []) {

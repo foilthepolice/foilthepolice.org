@@ -1,12 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Scaffolding from "../components/scaffolding"
+import Scaffolding from "../components/layout/scaffolding"
 import Image from "../components/image"
-import Head from "../components/head"
+import Head from "../components/layout/head"
 import SampleEmail from "../components/sample-email"
-
-import index from '../components/index.css'
 
 const Jurisdiction = ({ pageContext }) => {
   return (

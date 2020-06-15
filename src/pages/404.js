@@ -1,7 +1,7 @@
 import React from "react"
 
-import Scaffolding from "../components/scaffolding"
-import Head from "../components/head"
+import Scaffolding from "../components/layout/scaffolding"
+import Head from "../components/layout/head"
 
 const NotFoundPage = () => (
   <Scaffolding>
