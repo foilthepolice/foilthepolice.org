@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { COLORS } from "../constants"
 
-const Header = ({ siteTitle, toggleable }) => {
+const EmailTemplate = ({ siteTitle, toggleable, title, body }) => {
   let [ showContent, setShowContent ] = useState(!toggleable)
   return (
     <div
@@ -30,7 +30,7 @@ const Header = ({ siteTitle, toggleable }) => {
             style={{
               flex: '1'
             }}
-          >Example Email Title Here</h2>
+          >{title}</h2>
           <button 
             style={{
               background: 'none',
@@ -46,24 +46,23 @@ const Header = ({ siteTitle, toggleable }) => {
         </div>
       ) : ''}
       { showContent ? (
-        <div style={{ padding: '30px' }}>
-          {/* TODO(nsahler): DO SAMPLE LOADING */}
-          To Whom It May Concern:<br/>
-          I request any records of disciplinary actions taken against [INSERT YOUR POLICE DEPARTMENT] officers during the past 6 years.
+        <div style={{ padding: '30px' }}  dangerouslySetInnerHTML={{ __html: body}}>
         </div>
       ) : '' }
     </div>
   )
 }
 
-Header.propTypes = {
-  sampleId: PropTypes.string,
+EmailTemplate.propTypes = {
+  title: PropTypes.string,
+  body: PropTypes.string,
   toggleable: PropTypes.bool
 }
 
-Header.defaultProps = {
-  sampleId: '',
+EmailTemplate.defaultProps = {
+  title: '',
+  body: '',
   toggleable: true
 }
 
-export default Header
+export default EmailTemplate

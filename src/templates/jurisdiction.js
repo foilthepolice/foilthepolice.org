@@ -1,7 +1,7 @@
 import React from "react"
 import Scaffolding from "../components/scaffolding"
 import Head from "../components/head"
-import SampleEmail from "../components/sample-email"
+import EmailTemplate from "../components/EmailTemplate"
 
 const Jurisdiction = ({ pageContext }) => {
   return (
@@ -11,7 +11,7 @@ const Jurisdiction = ({ pageContext }) => {
     <p>
       {pageContext.example}
     </p>
-    <SampleEmail sample=""/>
+    <EmailTemplate sample=""/>
   </Scaffolding>
 )}
 
