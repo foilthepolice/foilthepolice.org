@@ -12,14 +12,19 @@ function stringsToGoogleSearchQ(strings = []) {
     .join('+')
 }
 
-const IndexPage = () => {
+function getStateQueryParam(searchString) {
+  const params = searchString.replace('?', '').split('&').map(p => p.split('='));
+  for (let p of params) {
+    if (p && p[0] === 'state' && Object.keys(STATES).includes(p[1])) return p[1];
+  }
+  return null;
+}
+
+const IndexPage = (props) => {
   const [hometownIn, setHometownIn] = useState('');
-  const [stateIn, setStateIn] = useState(null);
+  const [stateIn, setStateIn] = useState(getStateQueryParam(props.location.search));
   const [requestSent, setRequestSent] = useState(false);
   const transparencyLaw = TRANSPARENCY_LAWS.find(tl => tl.state === stateIn);
-
-  console.log(stateIn)
-  console.log(transparencyLaw)
 
   return (
     <Scaffolding>
@@ -50,7 +55,7 @@ const IndexPage = () => {
         <h1>Make Your Record Request</h1>
         <div>
           <h2>1. What state do you live in?</h2>
-          <select onChange={ev => setStateIn(ev.target.value)}>
+          <select value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
             <option>----</option>
             {Object.keys(STATES).map((st) => (
               <option key={st} value={st}>{STATES[st]}</option>
