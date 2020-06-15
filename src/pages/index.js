@@ -2,23 +2,12 @@ import React, { Fragment, useState } from 'react';
 
 import STATES from '../components/constants/states';
 import TRANSPARENCY_LAWS from '../components/laws/transparencyLaws';
+import getStateQueryParam from '../components/urls/getStateQueryParam';
+import stringsToGoogleSearchQ from '../components/urls/stringsToGoogleSearchQ';
+
 import Scaffolding from "../components/layout/scaffolding"
 import Head from "../components/layout/head"
 import SampleEmail from "../components/sample-email"
-
-function stringsToGoogleSearchQ(strings = []) {
-  return strings
-    .map((str) => str.replace(/\s/g, '+'))
-    .join('+')
-}
-
-function getStateQueryParam(searchString) {
-  const params = searchString.replace('?', '').split('&').map(p => p.split('='));
-  for (let p of params) {
-    if (p && p[0] === 'state' && Object.keys(STATES).includes(p[1])) return p[1];
-  }
-  return null;
-}
 
 const IndexPage = (props) => {
   const [hometownIn, setHometownIn] = useState('');
@@ -37,18 +26,6 @@ const IndexPage = (props) => {
         <p>
           FOI requests are what released police body cam videos of Laquan McDonald’s murder, uncovered the NYPD’s monitoring of Black Lives Matter activists, revealed NJ officers using force at significantly higher rates than their department, and more.
         </p>
-        <p>
-          A records request to uncover violent officers can be as simple as:
-        </p>
-        <div>
-          <p>
-            <b>
-              To Whom It May Concern:
-
-              I request all disciplinary reports for [INSERT YOUR POLICE DEPARTMENT] officers made during the past 6 years.
-            </b>
-          </p>
-        </div>
       </div>
       <hr />
       <div>
