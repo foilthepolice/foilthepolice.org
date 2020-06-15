@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { Component, useState } from 'react'
-import COLORS from "../colors"
+import React, { useState } from 'react'
+import { COLORS } from "../constants"
 
 const Header = ({ siteTitle, toggleable }) => {
   let [ showContent, setShowContent ] = useState(!toggleable)
-  console.log(typeof toggleable)
   return (
     <div
       style={{

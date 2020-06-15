@@ -1,19 +1,20 @@
 import React, { Fragment, useState } from 'react';
 
-import STATES from '../components/constants/states';
-import TRANSPARENCY_LAWS from '../components/laws/transparencyLaws';
-import getStateQueryParam from '../components/urls/getStateQueryParam';
-import stringsToGoogleSearchQ from '../components/urls/stringsToGoogleSearchQ';
+import { STATES } from '../constants';
+import TRANSPARENCY_LAWS from '../../data/transparencyLaws';
+import { stringsToGoogleSearchQ } from '../utils';
 
-import Scaffolding from "../components/layout/scaffolding"
-import Head from "../components/layout/head"
+import Scaffolding from "../components/scaffolding"
+import Head from "../components/head"
 import SampleEmail from "../components/sample-email"
 
-const IndexPage = (props) => {
-  const [hometownIn, setHometownIn] = useState('');
-  const [stateIn, setStateIn] = useState(getStateQueryParam(props.location.search));
-  const [requestSent, setRequestSent] = useState(false);
-  const transparencyLaw = TRANSPARENCY_LAWS.find(tl => tl.state === stateIn);
+const IndexPage = ({ location }) => {
+  const params =  new URLSearchParams(location.search)
+
+  const [hometownIn, setHometownIn] = useState('')
+  const [stateIn, setStateIn] = useState(params.get('state'))
+  const [requestSent, setRequestSent] = useState(false)
+  const transparencyLaw = TRANSPARENCY_LAWS.find(tl => tl.state === stateIn)
 
   return (
     <Scaffolding>

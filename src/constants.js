@@ -1,4 +1,8 @@
-export default {
+export const COLORS = {
+  dark: '#151515'
+}
+
+export const STATES = {
   ak: 'Alaska',
   al: 'Alabama',
   ar: 'Arkansas',
