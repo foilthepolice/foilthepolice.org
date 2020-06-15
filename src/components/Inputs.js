@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components';
+import { COLORS } from '../constants';
 
 export const InputCSS = css`
   width: 100%;
   outline: none;
   padding: .8em 1em;
-  border: 1px solid #FAFAFA;
-  border-bottom: 2px solid #F0F0F0;
   border-radius: 3px;
+  border: 1px solid #FAFAFA;
+  border-bottom: 4px solid ${COLORS.WHITE[300]};
   font-size: 16px;
   font-weight: 700;
   ${props => {

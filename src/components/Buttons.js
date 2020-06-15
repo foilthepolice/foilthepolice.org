@@ -3,13 +3,6 @@ import { COLORS } from '../constants';
 
 export const ButtonCSS = css`
   box-sizing: border-box;
-  background: blue;
-  border: 1px solid blue;
-  border-bottom: 3px solid blue;
-  color: ${COLORS.WHITE[900]};
-  path {
-    fill: ${COLORS.WHITE[900]};
-  }
   border-radius: 4px;
   text-decoration: none;
   justify-content: center;
@@ -25,6 +18,40 @@ export const ButtonCSS = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${(props) => {
+    // Color X - Inverted
+    // Color X
+    if (props.color === 'blue' && props.inverted) {
+      return css`
+        background: transparent;
+        border: 2px solid ${COLORS.BLUE[500]};
+        color: ${COLORS.BLUE[500]};
+      `;
+    }
+    if (props.color === 'blue') {
+      return css`
+        background: ${COLORS.BLUE[500]};
+        border: 1px solid ${COLORS.BLUE[300]};
+        border-bottom: 4px solid ${COLORS.BLUE[400]};
+        color: ${COLORS.WHITE[900]};
+      `;
+    }
+    if (props.color === 'black' && props.inverted) {
+      return css`
+        background: transparent;
+        border: 2px solid ${COLORS.BLACK[500]};
+        color: ${COLORS.BLACK[500]};
+      `;
+    }
+    if (props.color === 'black') {
+      return css`
+        background: ${COLORS.BLACK[500]};
+        border: 1px solid ${COLORS.BLACK[300]};
+        border-bottom: 4px solid ${COLORS.BLACK[400]};
+        color: ${COLORS.WHITE[900]};
+      `;
+    }
+  }}
   ${(props) => {
     if (props.disabled) {
       return css`
