@@ -14,5 +14,7 @@ As you know, N.J.S.A. 47:1A-5.i requires that a custodian of government shall gr
 If for any reason any portion of my request is denied, as is stated in N.J.S.A. 47:1A-5.g, please inform me of specific reason(s) in writing and provide the name and address of the person or body to whom an appeal should be directed.
 
 Sincerely,
+
 [YOUR NAME]
+
 [YOUR CONTACT INFORMATION]
