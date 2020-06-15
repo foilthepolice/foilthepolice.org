@@ -8,9 +8,8 @@ const Header = ({ siteTitle, toggleable }) => {
     <div
       style={{
         border: '1px solid',
-        borderColor: COLORS.dark,
+        borderColor: COLORS.BLACK[500],
         margin: '0 auto',
-        marginBottom: '45px',
         maxWidth: 960
       }}
     >
@@ -21,21 +20,21 @@ const Header = ({ siteTitle, toggleable }) => {
             flexFlow: 'row',
             alignItems: 'center',
             borderBottom: '1px solid',
-            borderColor: COLORS.dark,
+            borderColor: COLORS.BLACK[500],
             marginBottom: '-1px',
             padding: '30px',
           }}
-        > 
+        >
           <h2
             style={{
               flex: '1'
             }}
           >Example Email Title Here</h2>
-          <button 
+          <button
             style={{
               background: 'none',
               border: '1px solid',
-              borderColor: COLORS.dark,
+              borderColor: COLORS.BLACK[500],
               padding: '13px 20px',
               minWidth: '100px',
               cursor: 'pointer'
