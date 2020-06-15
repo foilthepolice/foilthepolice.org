@@ -70,7 +70,7 @@ const IndexPage = () => {
               <h2>3. Send to your local government clerk!</h2>
               <p>All that’s left is to find out where to e-mail your request to. Let’s search for your clerk’s e-mail:</p>
               <input type="text" value={hometownIn} placeholder="Enter your town's name" onChange={ev => setHometownIn(ev.target.value)} />
-              <a href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, STATES[stateIn], transparencyLaw.abbr, 'submit'])}`} target="_blank">
+              <a href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, transparencyLaw.name, 'submit'])}`} target="_blank">
                 <button>Search for Clerk Email</button>
               </a>
               <br />
