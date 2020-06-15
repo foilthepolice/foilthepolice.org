@@ -12,7 +12,8 @@
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-plugin-styled-components": "^3.3.4",
-    "gatsby-source-filesystem": "^2.3.8",
+    "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-transformer-remark": "^2.8.15",
     "gatsby-transformer-sharp": "^2.5.3",
     "js-yaml": "^3.14.0",
     "prop-types": "^15.7.2",
@@ -37,7 +38,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
-    "deploy": "gatsby build --prefix-paths && cp CNAME public/CNAME && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",

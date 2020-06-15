@@ -9,6 +9,7 @@ import Scaffolding from '../components/Scaffolding';
 import { Button, ButtonLink } from '../components/Buttons';
 import { Input, Select } from '../components/Inputs';
 import { A, H1, H2, H3, P } from '../components/Typography';
+import EmailTemplateList from '../components/EmailTemplateList';
 
 const IndexSection = styled.div`
   padding-bottom: 2em;
@@ -89,9 +90,7 @@ const IndexPage = ({ location }) => {
             <div>
               <H3>2. Choose Records to Request:</H3>
               <P>Below are record request templates informed by journalists and lawyers. We've inserted language that lessen the chance of denial and get faster responses. You just need to copy, fill in your name, and send!</P>
-              <RequestTemplatePlaceholder />
-              <RequestTemplatePlaceholder />
-              <RequestTemplatePlaceholder />
+              <EmailTemplateList state={stateIn}/>
               <P>
                 <small><i>Are you a lawyer or journalist that can expand the template ideas? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
               </P>
