@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 
 const Head = ({ siteTitle }) => (
   <Helmet>
-    <title>FOIL The Police - {siteTitle}</title>
+    <title>FTP</title>
     {/*<link rel="icon" href={symbol} type="image/png" />*/}
   </Helmet>
 )

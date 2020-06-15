@@ -1,5 +1,17 @@
 export const COLORS = {
-  dark: '#151515'
+  WHITE: {
+    900: '#FFFFFF',
+    500: '#CCD',
+  },
+  BLACK: {
+    900: '#444',
+    500: '#222',
+    100: '#111',
+  },
+  BLUE: {
+    300: '#21213E',
+    100: '#0E0E1D',
+  },
 }
 
 export const STATES = {

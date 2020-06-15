@@ -34,7 +34,7 @@ const IndexPage = ({ location }) => {
         <div>
           <h2>1. What state do you live in?</h2>
           <select value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
-            <option>----</option>
+            <option value="">---</option>
             {Object.keys(STATES).map((st) => (
               <option key={st} value={st}>{STATES[st]}</option>
             ))}
