@@ -44,14 +44,6 @@ const InputRow = styled.div`
   }
 `;
 
-const RequestTemplatePlaceholder = styled.div`
-  width: 100%;
-  height: 120px;
-  background: ${COLORS.BLUE[300]};
-  opacity: 0.25;
-  margin: 1.5em 0;
-`;
-
 const IndexPage = ({ location }) => {
   const params =  new URLSearchParams(location.search)
 

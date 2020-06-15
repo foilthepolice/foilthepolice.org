@@ -3,7 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import Favicon from '../images/favicon.png';
+import Favicon from '../../static/favicon.png';
 
 const Head = () => {
   const data = useStaticQuery(graphql`

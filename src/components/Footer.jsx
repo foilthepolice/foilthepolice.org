@@ -1,23 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { A, H4 } from './Typography';
+
+import { COLORS } from '../constants';
+import { A, H3 } from './Typography';
 
 const FooterWrapper = styled.div`
-  padding: 4em 2em;
-  main {
-    max-width: 720px;
-    margin: 0 auto;
-    @media(max-width: 45em) {
-      width: 100%;
-    }
-  }
+  padding: 2em;
+  text-align: center;
+  opacity: 0.4;
+  color: ${COLORS.WHITE[500]};
 `;
 
 const Footer = ({ children }) => {
   return (
     <FooterWrapper>
-      <H4>No Justice. No Peace.</H4>
-      <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A>
+      <H3>No Justice. No Peace.</H3>
+      <small><A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></small>
     </FooterWrapper>
   )
 }
