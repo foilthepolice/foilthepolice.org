@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
-import { COLORS } from "../constants"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components';
+import PropTypes from 'prop-types'
+import React, { useState, Fragment } from 'react'
+
+import { H2, P } from './Typography';
 import EmailTemplate from "./EmailTemplate"
+
+const EmailTemplateListWrapper = styled.div`
+  & > div {
+    margin-bottom: 1em;
+  }
+`;
 
 const EmailTemplateList = ({ state }) => {
   const data = useStaticQuery(graphql`
@@ -15,7 +23,9 @@ const EmailTemplateList = ({ state }) => {
             frontmatter {
               state
               title
+              goal
             }
+            rawMarkdownBody
           }
         }
       }
@@ -28,27 +38,25 @@ const EmailTemplateList = ({ state }) => {
 
   if (emailTemplates.length > 0) {
     return (
-      <div
-        style={{
-          border: '1px solid',
-          borderColor: COLORS.dark,
-          margin: '0 auto',
-          marginBottom: '45px',
-          maxWidth: 960
-        }}
-      >
-        { emailTemplates.map( template => (
-          <EmailTemplate 
+      <EmailTemplateListWrapper>
+        {emailTemplates.map( template => (
+          <EmailTemplate
             key={template.id}
             title={template.frontmatter.title}
-            body={template.html}
+            goal={template.frontmatter.goal}
+            requestHtml={template.html}
+            requestMarkdown={template.rawMarkdownBody}
           />)
         )}
-      </div>
+      </EmailTemplateListWrapper>
     )
   } else {
     /* TODO(nsahler): Actually write copy for this */
-    return (<h2>No Templates for This State</h2>)
+    return (
+      <Fragment>
+        <H2>No record templates for this state.<br />Please check back soon.</H2>
+      </Fragment>
+    );
   }
 }
 

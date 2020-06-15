@@ -1,54 +1,89 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
-import { COLORS } from "../constants"
+import copy from 'copy-to-clipboard';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
-const EmailTemplate = ({ siteTitle, toggleable, title, body }) => {
+import { COLORS } from '../constants';
+import { H3, P } from './Typography';
+import { Button } from '../components/Buttons';
+
+const EmailTemplateWrapper = styled.div`
+  background: ${COLORS.WHITE[800]};
+  border-radius: 2px;
+  border: 1px solid ${COLORS.WHITE[500]};
+  border-bottom: 6px solid ${COLORS.WHITE[300]};
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    &:hover {
+      cursor: pointer;
+    }
+    h3 {
+      font-weight: 700;
+      color: ${COLORS.BLACK[300]};
+      padding: 0;
+      text-decoration: underline;
+    }
+  }
+  .goal {
+    padding: 0.5em 1em;
+    border-top: 1px solid ${COLORS.WHITE[500]};
+    p {
+      color: ${COLORS.BLACK[900]};
+    }
+  }
+  .request-template {
+    background: ${COLORS.WHITE[700]};
+    border-top: 2px solid ${COLORS.WHITE[600]};
+    padding: 1.5em 2.5em 2.5em;
+    color: ${COLORS.BLACK[900]};
+    font-size: 14px;
+    font-family: Courier;
+    line-height: 120%;
+  }
+`;
+
+const CopyRequestButton = ({ requestText }) => {
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setCopied(false), 2500);
+  }, [copied])
+
+  return (
+    <Button color="black" size="sm" inverted disabled={copied} onClick={() => {
+      setCopied(true);
+      copy(requestText);
+    }}>
+      {copied ? 'Copied!' : 'Copy Request to Clipboard'}
+    </Button>
+  );
+}
+
+const EmailTemplate = ({ goal, toggleable, requestHtml, requestMarkdown, title }) => {
   let [ showContent, setShowContent ] = useState(!toggleable)
   return (
-    <div
-      style={{
-        border: '1px solid',
-        borderColor: COLORS.BLACK[500],
-        margin: '0 auto',
-        maxWidth: 960
-      }}
-    >
-      { toggleable ? (
-        <div
-          style={{
-            display: 'flex',
-            flexFlow: 'row',
-            alignItems: 'center',
-            borderBottom: '1px solid',
-            borderColor: COLORS.BLACK[500],
-            marginBottom: '-1px',
-            padding: '30px',
-          }}
-        >
-          <h2
-            style={{
-              flex: '1'
-            }}
-          >{title}</h2>
-          <button
-            style={{
-              background: 'none',
-              border: '1px solid',
-              borderColor: COLORS.BLACK[500],
-              padding: '13px 20px',
-              minWidth: '100px',
-              cursor: 'pointer'
-            }}
-            onClick={() => setShowContent(!showContent)}>
-            { showContent ? 'HIDE': 'SHOW' }
-          </button>
+    <EmailTemplateWrapper>
+      <div className="header" onClick={() => {
+        if (toggleable) setShowContent(!showContent)
+      }}>
+        <H3>{title}</H3>
+        {toggleable && <Button color="black" size="sm" inverted>{showContent ? 'Hide': 'View'}</Button>}
+      </div>
+      {goal && (
+        <div className="goal">
+          <P><b>What this reveals:</b> {goal}</P>
         </div>
-      ) : ''}
-      { showContent ? (
-        <div style={{ padding: '30px' }}  dangerouslySetInnerHTML={{ __html: body}}>
+      )}
+      {showContent && (
+        <div className="request-template">
+          <CopyRequestButton requestText={requestMarkdown} />
+          <br />
+          <div dangerouslySetInnerHTML={{ __html: requestHtml }} />
         </div>
-      ) : '' }
-    </div>
+      )}
+    </EmailTemplateWrapper>
   )
 }
 

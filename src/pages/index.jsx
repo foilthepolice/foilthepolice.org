@@ -60,7 +60,7 @@ const IndexPage = ({ location }) => {
           Freedom of Information (FOI) requests are a tool you have to uncover police department lies, violent officers, and evidence of abuse. An e-mail to your local government is all it takes.
         </P>
         <P>
-          FOI requests <A href="https://www.cjr.org/united_states_project/brandon_smith_chicago_police_laquan_mcdonald.php" target="_blank">released police body cam videos to the public</A>, <A href="https://theintercept.com/2015/08/18/undercover-police-spied-on-ny-black-lives-matter/" target="_blank">uncovered the NYPD’s monitoring of Black Lives Matter activists</A>, revealed <A href="http://force.nj.com/" target="_blank">NJ officers using force at significantly higher rates than their department</A>, and more.
+          FOI requests <A href="https://www.cjr.org/united_states_project/brandon_smith_chicago_police_laquan_mcdonald.php" target="_blank">released police body cam videos to the public</A>, <A href="https://theintercept.com/2015/08/18/undercover-police-spied-on-ny-black-lives-matter/" target="_blank">uncovered the NYPD’s monitoring of Black Lives Matter activists</A>, revealed <A href="http://force.nj.com/" target="_blank">NJ officers using force at significantly higher rates than their department</A>, and many other kinds of records.
         </P>
       </IndexSection>
       <IndexSection>
@@ -92,7 +92,7 @@ const IndexPage = ({ location }) => {
               <P>To find the correct email or submission form, it's best to look on your local gov's website. Enter your town, click search, and we'll point you in the right direction:</P>
               <InputRow>
                 <Input type="text" size="lg" value={hometownIn} placeholder="Enter your town's name" onChange={ev => setHometownIn(ev.target.value)} />
-                <ButtonLink size="lg" href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, transparencyLaw.name, 'submit'])}`} target="_blank">
+                <ButtonLink color="blue" size="lg" href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, transparencyLaw.name, 'submit'])}`} target="_blank">
                   <b>Search&nbsp;[⬈]</b>
                 </ButtonLink>
               </InputRow>
@@ -101,7 +101,7 @@ const IndexPage = ({ location }) => {
               </P>
             </div>
             <div>
-              <Button size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
+              <Button color="blue" size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
                 {!requestSent ? <b>I've Submitted My Record Request</b> : <b>Submitted</b>}
               </Button>
             </div>
