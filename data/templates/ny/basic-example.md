@@ -1,7 +1,6 @@
 ---
 title: Example!
 goal: Acquire information
-submittedByEmail: false
 state: ny
 ---
 <!-- Example content goes here -->

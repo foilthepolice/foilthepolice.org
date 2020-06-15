@@ -1,6 +1,6 @@
 import React from "react"
-import Scaffolding from "../components/scaffolding"
-import Head from "../components/head"
+import Scaffolding from "../components/Scaffolding"
+import Head from "../components/Head"
 import EmailTemplate from "../components/EmailTemplate"
 
 const Jurisdiction = ({ pageContext }) => {
