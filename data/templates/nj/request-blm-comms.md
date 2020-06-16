@@ -1,19 +1,15 @@
 ---
-title: "Request Itemized Budget & Performance Measurements"
-goal: "Compare budget increases/decreases alongside police department activity"
+title: "Request BLM Communications"
+goal: "Get police communications focused on Black Lives Matter organizing"
 state: nj
 ---
 To whom it may concern:
 
 Pursuant to Open Public Records Act ("OPRA"), I hereby request the following records:
 
-I request records that are sufficient to show the [INSERT YOUR TOWN] police department’s functional organizational structure.
+Emails, letters, and memos to or from police/law enforcement unions, the National Guard, or federal officials between May 1, 2020 and the present.
 
-I request records that are sufficient to show services and programs run by the [INSERT YOUR TOWN] police department.
-
-I request records that are sufficient to show forecasted and actual [INSERT YOUR TOWN] police department performance measures for the past 6 fiscal years.
-
-I request records that are sufficient to show the [INSERT YOUR TOWN] police department allocation of funding to its services and programs for the past 6 fiscal years.
+I also request copies of emails containing any of the following: "protest", "protests", "Black Lives Matter", "BLM", "riot", "riots", "antifa", "antifascist", "anti-fascist", or "militia".
 
 The requested documents will be made available to the general public, and this request is not being made for commercial purposes.
 
