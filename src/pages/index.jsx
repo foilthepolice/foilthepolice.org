@@ -69,8 +69,10 @@ const IndexPage = ({ location }) => {
           <H3>1. Select Your State:</H3>
           <Select size="lg" value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
             <option>----</option>
-            {Object.keys(STATES).map((st) => (
-              <option key={st} value={st}>{STATES[st]}</option>
+            {Object.entries(STATES)
+              .sort(([c1, name],[c2, name2]) => name > name2 )
+              .map(([code, name]) => (
+                <option key={code} value={code}>{name}</option>
             ))}
           </Select>
           <P>

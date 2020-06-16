@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 import PropTypes from 'prop-types'
-import React, { useState, Fragment } from 'react'
+import React, { Fragment } from 'react'
 
-import { H2, P } from './Typography';
+import { H2 } from './Typography';
 import EmailTemplate from "./EmailTemplate"
 
 const EmailTemplateListWrapper = styled.div`
@@ -34,7 +34,7 @@ const EmailTemplateList = ({ state }) => {
 
   const emailTemplates = data
     .allMarkdownRemark.edges.map( edge => edge.node)
-    .filter( node => node.frontmatter.state == state )
+    .filter( node => node.frontmatter.state === state )
 
   if (emailTemplates.length > 0) {
     return (
