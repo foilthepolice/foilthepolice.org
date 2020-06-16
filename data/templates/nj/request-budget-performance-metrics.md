@@ -7,13 +7,13 @@ To whom it may concern:
 
 Pursuant to Open Public Records Act ("OPRA"), I hereby request the following records:
 
-I request records that are sufficient to show the Hanover Township police department’s functional organizational structure.
+I request records that are sufficient to show the [INSERT YOUR TOWN] police department’s functional organizational structure.
 
-I request records that are sufficient to show services and programs run by the Hanover Township police department.
+I request records that are sufficient to show services and programs run by the [INSERT YOUR TOWN] police department.
 
-I request records that are sufficient to show forecasted and actual Hanover Township police department performance measures for the past 6 fiscal years.
+I request records that are sufficient to show forecasted and actual [INSERT YOUR TOWN] police department performance measures for the past 6 fiscal years.
 
-I request records that are sufficient to show the Hanover Township police department allocation of funding to its services and programs for the past 6 fiscal years.
+I request records that are sufficient to show the [INSERT YOUR TOWN] police department allocation of funding to its services and programs for the past 6 fiscal years.
 
 As you know, N.J.S.A. 47:1A-5.i requires that a custodian of government shall grant access and respond to a request within seven business days of receipt of a request. Therefore, I would appreciate a response as soon as possible and look forward to hearing from you shortly. Thank you in advance for your anticipated cooperation in this matter.
 
@@ -23,6 +23,6 @@ In the event that there are fees, I would be grateful if you would inform me of 
 
 Sincerely,
 
-[YOUR NAME]
+[INSERT YOUR NAME]
 
-[YOUR CONTACT INFORMATION]
+[INSERT YOUR CONTACT INFORMATION]

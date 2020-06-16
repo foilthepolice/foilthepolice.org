@@ -19,6 +19,6 @@ In the event that there are fees, I would be grateful if you would inform me of 
 
 Sincerely,
 
-[YOUR NAME]
+[INSERT YOUR NAME]
 
-[YOUR CONTACT INFORMATION]
+[INSERT YOUR CONTACT INFORMATION]
