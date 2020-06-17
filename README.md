@@ -1,99 +1,42 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# foilthepolice.org
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[**foilthepolice.org**](https://foilthepolice.org/) provides record request templates that you can send to your local police department to track for violent officers escaping accountability and investigate other parts of the department. There aren't enough journalists and lawyers to investigate every PD, so it's on all of us to expose them in each of our communities.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Join the conversation
 
-## 🚀 Quick start
+[**Join our Slack**](https://join.slack.com/t/foilthepolice/shared_invite/zt-fh0d474g-77AH4FfcB1IEtFKuNaptUw) for questions, discussions, and to join a team.
 
-1.  **Create a Gatsby site.**
+## How to contribute
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+Making it as easy for anyone to investigate their local police department has a few moving parts. Here are some ways you can help:
+- help us add record request templates for each state that people can send to their local police departments
+- help us compile journalists and lawyers individuals can reach out to if they uncover abuse
+- help us design/program this tool to empower people to be first-time investigators help us determine ways records can be uploaded, tagged, and shared for reserachers
+- help us find ways to expand the reach and awareness of this tool so people feel empowered to investigate their local police departments and officers
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+### Teams
 
-1.  **Start developing.**
+All work that people are doing to further foilthepolice.org is important and helpful. To make it easier to jump in and help, we've defined teams and responsibilities. You are totally welcome to participate across teams.
 
-    Navigate into your new site’s directory and start it up.
+#### Request Templates & Research Team
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+Help add record request templates for each state. Statutes need to be researched in order to hold clerks accountable to timely and proper responses. As state laws change, templates may need to be edited or new ones added (ex: NY just made police officer disciplinary records no longer confidential, thus FOIL-able)
 
-1.  **Open the source code and start editing!**
+#### Social & Expansion Team
 
-    Your site is now running at `http://localhost:8000`!
+We want to empower people to investigate their local police but it's early days and no one even knows they have this right and ability. We're looking for people to drive programmatic social/search and/or manage IG
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+#### Development Team
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+Software is never done. There are host of feature ideas to make this service better for people that need to be built. This is a traditional GatsbyJS site. If you're a developer check the project boards and see the roadmap.
 
-## 🧐 What's inside?
+#### Journalist & Legal Team
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+Putting pressure on clerks who are non-responsive often requires dropping the names of journalists, lawyers, news outlets that could be involved. We need help building and maintaing a list of professionals that people can reach out to when they need to elevate what they discover.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+---
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+Thanks yall,\
+foilthepolice.org team
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+and a special thanks to the defund12.org for the inspiration and advice along the way 🖤
