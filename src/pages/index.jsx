@@ -48,7 +48,7 @@ const IndexPage = ({ location }) => {
   const params =  new URLSearchParams(location.search)
 
   const [hometownIn, setHometownIn] = useState('')
-  const [stateIn, setStateIn] = useState(params.get('state'))
+  const [stateIn, setStateIn] = useState(params.get('state') || '')
   const [requestSent, setRequestSent] = useState(false)
   const transparencyLaw = TRANSPARENCY_LAWS.find(tl => tl.state === stateIn)
 
@@ -68,11 +68,9 @@ const IndexPage = ({ location }) => {
         <div>
           <H3>1. Select Your State:</H3>
           <Select size="lg" value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
-            <option>----</option>
-            {Object.entries(STATES)
-              .sort(([c1, name],[c2, name2]) => name > name2 )
-              .map(([code, name]) => (
-                <option key={code} value={code}>{name}</option>
+            <option value="">----</option>
+            {Object.keys(STATES).map(key => (
+                <option key={key} value={key}>{STATES[key]}</option>
             ))}
           </Select>
           <P>
