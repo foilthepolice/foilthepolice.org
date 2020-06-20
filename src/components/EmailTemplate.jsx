@@ -73,7 +73,7 @@ const EmailTemplate = ({ goal, toggleable, requestHtml, requestMarkdown, title }
       </div>
       {goal && (
         <div className="goal">
-          <P><b>What this reveals:</b> {goal}</P>
+          <P><b>Guide:</b> {goal}</P>
         </div>
       )}
       {showContent && (
