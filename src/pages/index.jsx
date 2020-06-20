@@ -110,8 +110,8 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] > 0) && (
           <Fragment>
             <div>
-              <H3>2. Choose Records to Request:</H3>
-              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]}. We've inserted language that lessen the chance of denial and get faster responses. You just need to copy, fill in your name, and send!</P>
+              <H3>2. Choose Record Request Template to Send:</H3>
+              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov. You just need to copy, fill in your name, and send!</P>
               <EmailTemplateList state={stateIn}/>
               <P>
                 <small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>

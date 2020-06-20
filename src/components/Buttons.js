@@ -15,9 +15,6 @@ export const ButtonCSS = css`
     right: 3px;
     max-height: 18px;
   }
-  display: flex;
-  align-items: center;
-  justify-content: center;
   ${(props) => {
     // Color X - Inverted
     // Color X
@@ -49,6 +46,21 @@ export const ButtonCSS = css`
         border: 1px solid ${COLORS.BLACK[300]};
         border-bottom: 4px solid ${COLORS.BLACK[400]};
         color: ${COLORS.WHITE[900]};
+      `;
+    }
+    if (props.color === 'white' && props.inverted) {
+      return css`
+        background: transparent;
+        border: 2px solid ${COLORS.WHITE[900]};
+        color: ${COLORS.WHITE[900]};
+      `;
+    }
+    if (props.color === 'white') {
+      return css`
+        background: ${COLORS.WHITE[900]};
+        border: 1px solid ${COLORS.WHITE[500]};
+        border-bottom: 4px solid ${COLORS.WHITE[300]};
+        color: ${COLORS.BLACK[300]};
       `;
     }
   }}
