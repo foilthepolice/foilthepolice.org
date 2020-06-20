@@ -166,16 +166,6 @@ const IndexPage = ({ location }) => {
               <Button color="white" size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
                 {!requestSent ? <b>I've Submitted My Record Request</b> : <b>✊🏿✊🏾✊🏽✊🏼✊🏻</b>}
               </Button>
-              {/* <P>
-                You have now gone through the process of making an freedom of information request, a tool that journalists, lawyers, activists, and citizens use to ensure their governments are being held accountable. You should be proud of yourself for taking this step!
-              </P>
-              <P>
-                {transparencyLaw.responseWithinDays
-                  ? `While you wait for a response, be aware that ${STATES[stateIn]} law requires a response to your request within ${transparencyLaw.responseWithinDays} business days.`
-                  : `While you wait for a response, be aware that ${STATES[stateIn]} law enforces no requirement on a response time to your request. That said, you should expect a response within a reasonable amount of time.`}
-                &ensp;
-                There is little reprocussion for a clerk or coordinator being slow and violating the requirements.
-              </P> */}
             </div>
 
             {requestSent && (
