@@ -7,9 +7,9 @@ import TRANSPARENCY_LAWS from '../../data/transparencyLaws';
 import { stringsToGoogleSearchQ } from '../utils';
 
 import Scaffolding from '../components/Scaffolding';
-import { Button, ButtonLink } from '../components/Buttons';
+import { Button } from '../components/Buttons';
 import { Input, Select } from '../components/Inputs';
-import { A, H1, H2, H3, P } from '../components/Typography';
+import { A, H1, H2, H3, P, Small } from '../components/Typography';
 import EmailTemplateList from '../components/EmailTemplateList';
 
 const IndexSection = styled.div`
@@ -32,7 +32,7 @@ const IndexSection = styled.div`
   }
 `;
 
-const InputRow = styled.div`
+const InputRowForm = styled.form`
   display: flex;
   a {
     min-width: 160px;
@@ -94,7 +94,7 @@ const IndexPage = ({ location }) => {
       <IndexSection>
         <H2 id="make-a-police-record-request">Get Police Records:</H2>
         <div>
-          <H3>1. Select Your State:</H3>
+          <H3>1. Select your state:</H3>
           <Select size="lg" value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
             <option value="">----</option>
             {Object.keys(STATES).map(key => (
@@ -102,7 +102,7 @@ const IndexPage = ({ location }) => {
             ))}
           </Select>
           <P>
-            {(stateIn && transparencyLaw) && <small><i>Your state's transparency law: <A href={transparencyLaw.mrGuideUrl} target="_blank">{transparencyLaw.name}</A> ("{transparencyLaw.abbr}")</i></small>}
+            {(stateIn && transparencyLaw) && <Small><i>Your state's transparency law: <A href={transparencyLaw.mrGuideUrl} target="_blank">{transparencyLaw.name}</A> ("{transparencyLaw.abbr}")</i></Small>}
           </P>
         </div>
 
@@ -110,24 +110,42 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] > 0) && (
           <Fragment>
             <div>
-              <H3>2. Choose Record Request Template to Send:</H3>
-              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov. You just need to copy, fill in your name, and send!</P>
-              <EmailTemplateList state={stateIn}/>
+              <H3>2. Get your local gov clerk's submission email, webpage, or pdf:</H3>
               <P>
-                <small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
+                Depending on your community, a {transparencyLaw.abbr} submission may be done by email, website, or PDF.
+                Enter your town/city and we'll prep a Google search for you to easily find the email or pdf you need.
+              </P>
+              <InputRowForm onSubmit={(e) => {
+                e.preventDefault();
+                if (typeof window !== undefined) window.open(`https://google.com/search?q=${stringsToGoogleSearchQ([`"${hometownIn}"`, transparencyLaw.name, 'request form'])}`)
+              }}>
+                <Input
+                  type="text"
+                  size="lg"
+                  value={hometownIn}
+                  placeholder="Enter your town's name" onChange={ev => setHometownIn(ev.target.value)}
+                />
+                <Button
+                  type="submit"
+                  color="white"
+                >
+                  <b>Search&nbsp;[⬈]</b>
+                </Button>
+              </InputRowForm>
+              <P>
+                <Small>
+                  <i>
+                    Searching: google.com/search?q={stringsToGoogleSearchQ([`"${hometownIn}"`, transparencyLaw.name, 'request form']).replace(/"/g, '')}
+                  </i>
+                </Small>
               </P>
             </div>
             <div>
-              <H3>3. Find Your Local Gov Clerk's Submission Page/Email:</H3>
-              <P>To find the correct email or submission form, it's best to look on your local gov's website. Enter your town, click search, and we'll point you in the right direction:</P>
-              <InputRow>
-                <Input type="text" size="lg" value={hometownIn} placeholder="Enter your town's name" onChange={ev => setHometownIn(ev.target.value)} />
-                <ButtonLink color="blue" size="lg" href={`https://google.com/search?q=${stringsToGoogleSearchQ([hometownIn, transparencyLaw.name, 'submit'])}`} target="_blank">
-                  <b>Search&nbsp;[⬈]</b>
-                </ButtonLink>
-              </InputRow>
+              <H3>3. Choose a record request template to send:</H3>
+              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov. You just need to copy, fill in your name, and send!</P>
+              <EmailTemplateList state={stateIn}/>
               <P>
-                <small><i>FYI: Your town may ask you to submit through a webpage or insert the text into PDF form. Depending on how many pages you request, the clerk may have a $1~10 fee.</i></small>
+                <Small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></Small>
               </P>
             </div>
             <div>

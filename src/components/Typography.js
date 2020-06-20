@@ -45,6 +45,12 @@ export const P = styled.p`
   font-size: 16px;
 `;
 
+export const Small = styled.small`
+  ${TypographyCSS}
+  color: ${COLORS.WHITE[300]};
+  font-size: 12px;
+`;
+
 export const A = styled.a`
   &, &:visited, &:hover, &:active {
     ${TypographyCSS}
