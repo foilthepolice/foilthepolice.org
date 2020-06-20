@@ -1,21 +1,33 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { flatten, startCase } from 'lodash';
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components';
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 import { H2 } from './Typography';
-import EmailTemplate from "./EmailTemplate"
+import { Button } from '../components/Buttons';
+import EmailTemplate from './EmailTemplate'
 
 const EmailTemplateListWrapper = styled.div`
+  margin: 1.5em 0;
   & > div {
     margin-bottom: 1em;
+  }
+`;
+
+const TemplateSelectionButtons = styled.div`
+  margin: 0.75em 0;
+  display: inline;
+  button {
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
   }
 `;
 
 const EmailTemplateList = ({ state }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      templates: allMarkdownRemark {
         edges {
           node {
             html
@@ -24,8 +36,9 @@ const EmailTemplateList = ({ state }) => {
               state
               title
               goal
+              categories
+              request
             }
-            rawMarkdownBody
           }
         }
       }
@@ -33,28 +46,54 @@ const EmailTemplateList = ({ state }) => {
   `)
 
   const emailTemplates = data
-    .allMarkdownRemark.edges.map( edge => edge.node)
-    .filter( node => node.frontmatter.state === state )
+    .templates.edges.map(edge => edge.node)
+    .filter((node) => node.frontmatter.state === state);
+  const categories = Array.from(new Set(flatten(
+    data.templates.edges.map(({ node }) => node.frontmatter.categories)
+  ))).filter((c) => c != null).sort().reverse();
+  const [filterCategory, setFilterCategory] = useState('useOfForce');
 
   if (emailTemplates.length > 0) {
     return (
-      <EmailTemplateListWrapper>
-        {emailTemplates.map( template => (
-          <EmailTemplate
-            key={template.id}
-            title={template.frontmatter.title}
-            goal={template.frontmatter.goal}
-            requestHtml={template.html}
-            requestMarkdown={template.rawMarkdownBody}
-          />)
-        )}
-      </EmailTemplateListWrapper>
-    )
+      <Fragment>
+        <TemplateSelectionButtons>
+          <Button
+            size="sm"
+            color="white"
+            inverted={filterCategory}
+            onClick={() => setFilterCategory(null)}
+          >
+            All Templates
+          </Button>
+          {categories.map((category) => (
+            <Button
+              size="sm"
+              color="white"
+              inverted={filterCategory !== category}
+              onClick={() => setFilterCategory(category)}
+            >
+              {startCase(category)}
+            </Button>
+          ))}
+        </TemplateSelectionButtons>
+        <EmailTemplateListWrapper>
+          {emailTemplates
+            .filter((template) => !filterCategory || (template.frontmatter.categories || []).includes(filterCategory))
+            .map(template => (
+              <EmailTemplate
+                key={template.id}
+                title={template.frontmatter.title}
+                goal={template.frontmatter.goal}
+                request={template.frontmatter.request}
+              />)
+          )}
+        </EmailTemplateListWrapper>
+      </Fragment>
+    );
   } else {
-    /* TODO(nsahler): Actually write copy for this */
     return (
       <Fragment>
-        <H2>No record templates for this state.<br />Please check back soon.</H2>
+        <H2>No record request templates.</H2>
       </Fragment>
     );
   }

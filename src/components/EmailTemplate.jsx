@@ -61,7 +61,7 @@ const CopyRequestButton = ({ requestText }) => {
   );
 }
 
-const EmailTemplate = ({ goal, toggleable, requestHtml, requestMarkdown, title }) => {
+const EmailTemplate = ({ goal, toggleable, request, title }) => {
   let [ showContent, setShowContent ] = useState(!toggleable)
   return (
     <EmailTemplateWrapper>
@@ -73,14 +73,14 @@ const EmailTemplate = ({ goal, toggleable, requestHtml, requestMarkdown, title }
       </div>
       {goal && (
         <div className="goal">
-          <P><b>What this reveals:</b> {goal}</P>
+          <P><b>Guide:</b> {goal}</P>
         </div>
       )}
       {showContent && (
         <div className="request-template">
-          <CopyRequestButton requestText={requestMarkdown} />
+          <CopyRequestButton requestText={request} />
           <br />
-          <div dangerouslySetInnerHTML={{ __html: requestHtml }} />
+          {request.split('\n').map(paragraph => <p>{paragraph}</p>)}
         </div>
       )}
     </EmailTemplateWrapper>

@@ -22,7 +22,7 @@ const IndexSection = styled.div`
     border-bottom: 1px solid ${COLORS.BLUE[300]};
   }
   h1 {
-    padding: 1em 0;
+    padding: 1em 0 0.25em;
   }
   h2, h3 {
     padding: 0.5em 0;
@@ -80,16 +80,19 @@ const IndexPage = ({ location }) => {
     <Scaffolding>
       <IndexSection>
         <H1>F.O.I.L. The Police</H1>
+        <H3>Uncover violent police officers in your town by sending a<br /><A href="#make-a-police-record-request">Freedom of Information</A> request e-mail to your local government.</H3>
         <P>
-          Freedom of Information (FOI) requests are a tool you have to uncover police department lies, violent officers, and evidence of abuse. An e-mail to your local government is all it takes.
+          Local governments are required to respond to any FOI request for records you send.
+          These requests have <A href="https://www.cjr.org/united_states_project/brandon_smith_chicago_police_laquan_mcdonald.php" target="_blank">released police body cam videos</A>, <A href="https://theintercept.com/2015/08/18/undercover-police-spied-on-ny-black-lives-matter/" target="_blank">revealed police tracking of activists</A>, and <A href="http://force.nj.com/" target="_blank">uncovered use of force by officers</A>.
+          It's your right and duty to monitor your local police.
         </P>
         <P>
-          FOI requests <A href="https://www.cjr.org/united_states_project/brandon_smith_chicago_police_laquan_mcdonald.php" target="_blank">released police body cam videos to the public</A>, <A href="https://theintercept.com/2015/08/18/undercover-police-spied-on-ny-black-lives-matter/" target="_blank">uncovered the NYPD’s monitoring of Black Lives Matter activists</A>, revealed <A href="http://force.nj.com/" target="_blank">NJ officers using force at significantly higher rates than their department</A>, and many other kinds of records.
+          <A href="#make-a-police-record-request">Use this crowd sourced tool to make your request</A>:
         </P>
       </IndexSection>
 
       <IndexSection>
-        <H2>Make a Police Record Request</H2>
+        <H2 id="make-a-police-record-request">Get Police Records:</H2>
         <div>
           <H3>1. Select Your State:</H3>
           <Select size="lg" value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
@@ -107,11 +110,11 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] > 0) && (
           <Fragment>
             <div>
-              <H3>2. Choose Records to Request:</H3>
-              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]}. We've inserted language that lessen the chance of denial and get faster responses. You just need to copy, fill in your name, and send!</P>
+              <H3>2. Choose Record Request Template to Send:</H3>
+              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov. You just need to copy, fill in your name, and send!</P>
               <EmailTemplateList state={stateIn}/>
               <P>
-                <small><i>Are you a lawyer or journalist that can add/expand templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
+                <small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
               </P>
             </div>
             <div>
@@ -139,11 +142,11 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] === 0) && (
           <div>
             <H3>2. Choose Records to Request:</H3>
-            <H2>We are still working on adding templates for your state.</H2>
-            <P>Soon there will be record request templates informed by journalists and lawyers in {STATES[stateIn]}. When they are available, all you will need to do is copy them, fill in your name, and send!</P>
+            <H2>We have not yet added templates for {STATES[stateIn]}.</H2>
             <P>
-              <small><i>Are you a lawyer or journalist that can add/expand templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
+              When they are available, all you will need to do is copy them, fill in your info, and send them to your local government.
             </P>
+            <H3><A href="https://github.com/foilthepolice/foilthepolice.org#foilthepoliceorg" target="_blank">Want to help add templates for {stateIn.toUpperCase()}? Join our request team.</A></H3>
           </div>
         )}
       </IndexSection>

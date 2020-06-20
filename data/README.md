@@ -9,7 +9,8 @@ When adding templates, please ensure you are using UTF-8 encoding. Please do not
 | title           | yes      | String   | Request of some record                                                              |
 | goal            | yes      | String   | Description of what this record requesst serves                                     |
 | state           | yes      | String   | Lowercase abbreviation of state                                                     |
-| [request]       | yes      | String   | The template text that will be copied, edited, and sent                             |
+| categories      | yes      | String[] | Category constant that can be filtered on. See below for possible values            |
+| request         | yes      | String   | The template text that will be copied, edited, and sent                             |
 
 
 ## File naming conventions
@@ -21,6 +22,12 @@ data/templates/nj/request-use-of-force-reports.md
 data/templates/ny/request-citizen-complaints.md
 ```
 
+## Categories
+
+When listing a template, the category tags should be one of the following:
+`budget`, `citizenComplaint`, `performanceMeasurements`, `policeUnionContracts`, `useOfForce`
+
+
 ## Example template
 
 ```
@@ -28,10 +35,13 @@ data/templates/ny/request-citizen-complaints.md
 title: <request for records>
 goal: <what these records can tell>
 state: <state abbr>
+categories:
+- useOfForce
+request: |
+  To whom it may concern
+
+  A template
+
+  [INSERT YOUR NAME]
 ---
-To whom it may concern
-
-A template
-
-[INSERT YOUR NAME]
 ```
