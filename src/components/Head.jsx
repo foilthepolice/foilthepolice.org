@@ -23,6 +23,7 @@ const Head = () => {
       <link rel="icon" type="image/png" href={Favicon} />
       <meta name="description" content={data.site.siteMetadata.description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="google-site-verification" content="aQt1pvoG2UvlwzL_BSBCe9PBGj0ACPbiw95ehaMahU4" />
     </Helmet>
   );
 }
