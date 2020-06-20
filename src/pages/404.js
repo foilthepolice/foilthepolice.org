@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled';
+import styled from 'styled-components';
 
 import Scaffolding from '../components/Scaffolding'
 import { A, H1, P } from '../components/Typography';
