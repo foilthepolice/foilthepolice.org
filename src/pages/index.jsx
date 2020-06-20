@@ -142,11 +142,11 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] === 0) && (
           <div>
             <H3>2. Choose Records to Request:</H3>
-            <H2>We are still working on adding templates for your state.</H2>
-            <P>Soon there will be record request templates informed by journalists and lawyers in {STATES[stateIn]}. When they are available, all you will need to do is copy them, fill in your name, and send!</P>
+            <H2>We have not yet added templates for {STATES[stateIn]}.</H2>
             <P>
-              <small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></small>
+              When they are available, all you will need to do is copy them, fill in your info, and send them to your local government.
             </P>
+            <H3><A href="https://github.com/foilthepolice/foilthepolice.org#foilthepoliceorg" target="_blank">Want to help add templates for {stateIn.toUpperCase()}? Join our request team.</A></H3>
           </div>
         )}
       </IndexSection>
