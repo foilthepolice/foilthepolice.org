@@ -21,10 +21,10 @@ const IndexSection = styled.div`
     border-bottom: 1px solid ${COLORS.BLUE[300]};
   }
   h1 {
-    padding: 1.5em 0;
+    padding: 1em 0;
   }
   h2, h3 {
-    padding: 0.5em 0 1em;
+    padding: 0.5em 0;
   }
   & > div {
     padding: 1em 0;
