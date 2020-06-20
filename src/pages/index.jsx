@@ -112,7 +112,7 @@ const IndexPage = ({ location }) => {
             <div>
               <H3>2. Get your local gov clerk's submission email, webpage, or pdf:</H3>
               <P>
-                Depending on your community, a {transparencyLaw.abbr} submission may be done by email, website, or PDF.
+                Depending on your community, a {transparencyLaw.abbr} submission may be done by email, website form, or PDF.
                 Enter your town/city and we'll prep a Google search for you to easily find the email or pdf you need.
               </P>
               <InputRowForm onSubmit={(e) => {

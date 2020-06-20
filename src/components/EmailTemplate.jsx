@@ -73,7 +73,7 @@ const EmailTemplate = ({ goal, toggleable, request, title }) => {
       </div>
       {goal && (
         <div className="goal">
-          <P><b>Guide:</b> {goal}</P>
+          <P><b>Why send this request:</b> {goal}</P>
         </div>
       )}
       {showContent && (
