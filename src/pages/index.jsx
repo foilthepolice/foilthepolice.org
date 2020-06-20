@@ -160,11 +160,12 @@ const IndexPage = ({ location }) => {
               <H3>4. Send in your {transparencyLaw.abbr} request:</H3>
               <P>
                 After inserting your contact info into a template above, you are ready to submit your {transparencyLaw.abbr} request!
-                You should feel proud and calm. You've taken an important step in holding the institutions we've entrusted with power accountable.
-                When you submit your request, you will have joined journalists, lawyers, and activists across the country doing this work.
+              </P>
+              <P>
+                When you've submitted your request, click below to learn what's next:
               </P>
               <Button color="white" size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
-                {!requestSent ? <b>I've Submitted My Record Request</b> : <b>✊🏿✊🏾✊🏽✊🏼✊🏻</b>}
+                {!requestSent ? <b>I've Submitted My {transparencyLaw.abbr} Request</b> : <b>✊🏿✊🏾✊🏽✊🏼✊🏻</b>}
               </Button>
             </div>
 
