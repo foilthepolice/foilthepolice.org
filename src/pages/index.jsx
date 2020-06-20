@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import React, { Fragment, useState } from 'react';
 
-import { COLORS, STATES } from '../constants';
+import { COLORS, HREFS, STATES } from '../constants';
 import TRANSPARENCY_LAWS from '../../data/transparencyLaws';
 import { stringsToGoogleSearchQ } from '../utils';
 
@@ -110,7 +110,7 @@ const IndexPage = ({ location }) => {
         {(stateIn && stateTemplateCounts[stateIn] > 0) && (
           <Fragment>
             <div>
-              <H3>2. Get your local gov clerk's submission email, webpage, or pdf:</H3>
+              <H3>2. Find your local gov clerk's submission email, webpage, or pdf:</H3>
               <P>
                 Depending on your community, a {transparencyLaw.abbr} submission may be done by email, website form, or PDF.
                 Enter your town/city and we'll prep a Google search for you to easily find the email or pdf you need.
@@ -142,17 +142,61 @@ const IndexPage = ({ location }) => {
             </div>
             <div>
               <H3>3. Choose a record request template to send:</H3>
-              <P>Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov. You just need to copy, fill in your name, and send!</P>
+              <P>
+                Below are record request templates informed by journalists and lawyers in {STATES[stateIn]} to get the best response from your local gov.
+                You just need to copy, fill in your name, and send!
+              </P>
+              <P>
+                We recommend first looking at use of force reports or police union contracts.
+                Use of force reports can reveal officers who use force more often on people of color.
+                Police union contracts can have qualified immunity clauses that allow them to avoid being held accountable when deadly force is used.
+              </P>
               <EmailTemplateList state={stateIn}/>
               <P>
-                <Small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></i></Small>
+                <Small><i>Are you a lawyer or journalist that can add templates? Please reach out to <A href={HREFS.MAIL_TO}>contact@foilthepolice.org</A></i></Small>
               </P>
             </div>
             <div>
-              <Button color="blue" size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
-                {!requestSent ? <b>I've Submitted My Record Request</b> : <b>Submitted</b>}
+              <H3>4. Send in your {transparencyLaw.abbr} request:</H3>
+              <P>
+                After inserting your contact info into a template above, you are ready to submit your {transparencyLaw.abbr} request!
+                You should feel proud and calm. You've taken an important step in holding the institutions we've entrusted with power accountable.
+                When you submit your request, you will have joined journalists, lawyers, and activists across the country doing this work.
+              </P>
+              <Button color="white" size="xl" disabled={requestSent} onClick={() => setRequestSent(true)}>
+                {!requestSent ? <b>I've Submitted My Record Request</b> : <b>✊🏿✊🏾✊🏽✊🏼✊🏻</b>}
               </Button>
+              {/* <P>
+                You have now gone through the process of making an freedom of information request, a tool that journalists, lawyers, activists, and citizens use to ensure their governments are being held accountable. You should be proud of yourself for taking this step!
+              </P>
+              <P>
+                {transparencyLaw.responseWithinDays
+                  ? `While you wait for a response, be aware that ${STATES[stateIn]} law requires a response to your request within ${transparencyLaw.responseWithinDays} business days.`
+                  : `While you wait for a response, be aware that ${STATES[stateIn]} law enforces no requirement on a response time to your request. That said, you should expect a response within a reasonable amount of time.`}
+                &ensp;
+                There is little reprocussion for a clerk or coordinator being slow and violating the requirements.
+              </P> */}
             </div>
+
+            {requestSent && (
+              <div>
+                <H2>Now that it's sent:</H2>
+                <P>
+                  Each state and department are different in terms of response time.
+                  <b>
+                    {transparencyLaw.responseWithinDays
+                      ? `${STATES[stateIn]} requires local government clerks to send you a response within ${transparencyLaw.responseWithinDays} business days.`
+                      : 'Unfortunately, your state does not force your local government to respond within some number of business days.'}
+                    </b>
+                  &ensp;
+                  If they are not able to fulfill your request within {transparencyLaw.responseWithinDays ? 'that deadline' : 'a reasonable time span'} you should expect to be notified.
+                </P>
+                <P>We hope your request is successful and you feel confident to do more. Should you receive records, we are compiling and tagging records people receive to make them easily searchable to journalists, lawyers, and activists. Please send us your city/state, request text, their response text, and any records attached to: <A href={HREFS.MAIL_TO}>contact@foilthepolice.org</A></P>
+                <P>
+                  If you have any feedback or ideas about where this project can go, <A href={HREFS.README}>join in and help out</A> or write us at <A href={HREFS.MAIL_TO}>contact@foilthepolice.org</A>
+                </P>
+              </div>
+            )}
           </Fragment>
         )}
 
@@ -164,19 +208,10 @@ const IndexPage = ({ location }) => {
             <P>
               When they are available, all you will need to do is copy them, fill in your info, and send them to your local government.
             </P>
-            <H3><A href="https://github.com/foilthepolice/foilthepolice.org#foilthepoliceorg" target="_blank">Want to help add templates for {stateIn.toUpperCase()}? Join our request team.</A></H3>
+            <H3><A href={HREFS.README} target="_blank">Want to help add templates for {stateIn.toUpperCase()}? Join our request team.</A></H3>
           </div>
         )}
       </IndexSection>
-
-      {requestSent && (
-        <IndexSection>
-          <H2>Good Job! Now that it's sent:</H2>
-          <P>Congrats on sending your request! You’ve now used a tool that journalists and lawyers around the country use to bring individuals, families, and communities justice. You should be proud, and we hope you continue to examine and hold your local police department accountable.</P>
-          <P>Each state and department are different in terms of response time. <b>{transparencyLaw.responseWithinDays ? `Your state requires local government clerks to send you a response within ${transparencyLaw.responseWithinDays} business days.` : 'Unfortunately, your state does not force your local government to respond within some number of business days.'}</b></P>
-          <P>We hope your request is successful and you feel confident to do more. Should you receive records, we are compiling and tagging records people receive to make them easily searchable to journalists, lawyers, and activists. Please send us your city/state, request text, their response text, and any records attached to: <A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></P>
-        </IndexSection>
-      )}
     </Scaffolding>
   )
 }

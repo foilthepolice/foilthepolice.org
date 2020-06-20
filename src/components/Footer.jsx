@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS } from '../constants';
+import { COLORS, HREFS } from '../constants';
 import { A, H3, P } from './Typography';
 
 const FooterWrapper = styled.div`
@@ -11,13 +11,13 @@ const FooterWrapper = styled.div`
   color: ${COLORS.WHITE[500]};
 `;
 
-const Footer = ({ children }) => {
+const Footer = () => {
   return (
     <FooterWrapper>
       <H3>No Justice, No Peace.</H3>
       <P>This site started when 3 neighbors in a small town (3000 pop.) set out to hold their local police accountable.</P>
-      <P>You have the power to investigate your local police. Please share your progress with us.</P>
-      <small><A href="mailto:contact@foilthepolice.org">contact@foilthepolice.org</A></small>
+      <P><A href={HREFS.README} target="_blank">Consider joining a team to help this project grow.</A></P>
+      <small><A href={HREFS.MAIL_TO}>contact@foilthepolice.org</A></small>
     </FooterWrapper>
   )
 }

@@ -22,6 +22,11 @@ export const COLORS = {
   },
 }
 
+export const HREFS = {
+  MAIL_TO: 'mailto:contact@foilthepolice.org',
+  README: 'https://github.com/foilthepolice/foilthepolice.org#foilthepoliceorg',
+};
+
 export const STATES = {
   al: 'Alabama',
   ak: 'Alaska',
