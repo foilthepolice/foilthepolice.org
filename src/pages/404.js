@@ -1,13 +1,16 @@
 import React from "react"
 
 import Scaffolding from "../components/Scaffolding"
-import Head from "../components/Head"
+import { A, H1, P } from '../components/Typography';
 
 const NotFoundPage = () => (
   <Scaffolding>
-    <Head title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <IndexSection>
+      <H1>F.O.I.L. The Police</H1>
+      <P>
+        There doesn't seem to be a page here. <A href="/">Go to homepage</A>
+      </P>
+    </IndexSection>
   </Scaffolding>
 )
 
