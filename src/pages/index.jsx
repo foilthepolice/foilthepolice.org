@@ -80,7 +80,7 @@ const IndexPage = ({ location }) => {
     <Scaffolding>
       <IndexSection>
         <H1>F.O.I.L. The Police</H1>
-        <H3>Uncover violent police officers in your town by sending a<br /><A href="#make-a-police-record-request">Freedom of Information</A> request e-mail to your local government.</H3>
+        <H3>Uncover violent police officers and qualified immunity in your town by sending a <A href="#make-a-police-record-request">Freedom of Information</A> request e-mail to your local government.</H3>
         <P>
           Local governments are required to respond to any FOI request for records you send.
           These requests have <A href="https://www.cjr.org/united_states_project/brandon_smith_chicago_police_laquan_mcdonald.php" target="_blank">released police body cam videos</A>, <A href="https://theintercept.com/2015/08/18/undercover-police-spied-on-ny-black-lives-matter/" target="_blank">revealed police tracking of activists</A>, and <A href="http://force.nj.com/" target="_blank">uncovered use of force by officers</A>.
@@ -92,7 +92,7 @@ const IndexPage = ({ location }) => {
       </IndexSection>
 
       <IndexSection>
-        <H2 id="make-a-police-record-request">Get Police Records:</H2>
+        <H2 id="make-a-police-record-request">Get Police Reports & Contracts:</H2>
         <div>
           <H3>1. Select your state:</H3>
           <Select size="lg" value={stateIn} onChange={ev => setStateIn(ev.target.value)}>
