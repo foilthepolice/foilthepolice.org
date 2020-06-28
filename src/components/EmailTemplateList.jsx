@@ -51,21 +51,13 @@ const EmailTemplateList = ({ state }) => {
   const categories = Array.from(new Set(flatten(
     data.templates.edges.map(({ node }) => node.frontmatter.categories)
   ))).filter((c) => c != null).sort().reverse();
-  const [filterCategory, setFilterCategory] = useState('useOfForce');
+  const [filterCategory, setFilterCategory] = useState('beginners');
 
   if (emailTemplates.length > 0) {
     return (
       <Fragment>
         <TemplateSelectionButtons>
-          <Button
-            size="sm"
-            color="white"
-            inverted={filterCategory}
-            onClick={() => setFilterCategory(null)}
-          >
-            All Templates
-          </Button>
-          {categories.map((category) => (
+          {categories.sort().map((category) => (
             <Button
               size="sm"
               color="white"
@@ -75,6 +67,14 @@ const EmailTemplateList = ({ state }) => {
               {startCase(category)}
             </Button>
           ))}
+          <Button
+            size="sm"
+            color="white"
+            inverted={filterCategory}
+            onClick={() => setFilterCategory(null)}
+          >
+            All Templates
+          </Button>
         </TemplateSelectionButtons>
         <EmailTemplateListWrapper>
           {emailTemplates

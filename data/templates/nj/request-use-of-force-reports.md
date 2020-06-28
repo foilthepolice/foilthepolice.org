@@ -3,6 +3,7 @@ title: Request Use of Force Reports
 goal: Use of force reports can tell you which officers use force at significantly higher rates than others
 state: nj
 categories:
+- beginners
 - useOfForce
 request: |
   To whom it may concern:

@@ -3,6 +3,7 @@ title: Request BLM Communications
 goal: Get police communications focused on Black Lives Matter organizing
 state: nj
 categories:
+- communications
 request: |
   To whom it may concern:
 
