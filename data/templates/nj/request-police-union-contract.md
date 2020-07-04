@@ -1,6 +1,6 @@
 ---
 title: Request Police Union Contract
-goal: See if there are qualified immunity clauses that allow officers to avoid disciplinary and legal actions
+goal: See if there are clauses that block police officers from being held accountable
 state: nj
 categories:
 - beginners
